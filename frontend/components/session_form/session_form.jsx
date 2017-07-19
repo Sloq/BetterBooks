@@ -29,8 +29,6 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    console.log(user);
-    console.log(this.state);
     this.props.processForm({user});
   }
 
@@ -40,9 +38,7 @@ class SessionForm extends React.Component {
       username: "Guest",
       password: "guest123456"
     };
-    console.log(user);
-    console.log(this.state);
-    this.props.processForm({user});
+    this.props.login({user});
   }
 
   navLink() {
@@ -63,7 +59,7 @@ class SessionForm extends React.Component {
             className="login-input"
             />;
           </label>
-          )
+        );
     }
   }
 

@@ -8,7 +8,6 @@ import SessionFormContainer from './session_form/session_form_container';
 const App = () => (
   <div>
     <header>
-      <h1>Welcome to BetterBooks!!</h1>
       <GreatingContainer/>
     </header>
 
