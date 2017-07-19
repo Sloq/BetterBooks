@@ -13,9 +13,10 @@
 #
 
 class User < ApplicationRecord
+  validates :username, uniqueness: true
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :email, format: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates :password, length: { minimum: 6, allow_nil: true }
+  validates :password, length: { minimum: 6 }, allow_nil: true
 
   attr_reader :password
 
@@ -29,10 +30,8 @@ class User < ApplicationRecord
 
   def self.validates_by_credentials(username, password)
     user = User.find_by(username: username)
-    if user && user.is_password?(password)
-      return user
-    end
-    nil
+    return nil unless user
+    user.is_password?(password) ? user : nil
   end
 
   def reset_session_token!
