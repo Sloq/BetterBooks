@@ -33,7 +33,7 @@
  	font-size: 100%;
  	font: inherit;
  	vertical-align: baseline;
-
+  text-decoration: none;
  }
  /* HTML5 display-role reset for older browsers */
  article, aside, details, figcaption, figure,
@@ -43,6 +43,7 @@
  body {
   display: flex;
  	line-height: 1;
+  height: 100%;
  }
  ol, ul {
  	list-style: none;
