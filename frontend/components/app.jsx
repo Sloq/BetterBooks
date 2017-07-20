@@ -5,12 +5,11 @@ import { Route, Redirect, Switch, Link, HashRouter }
 import { AuthRoute } from '../util/route_util';
 import GreatingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
+import NavbarContainer from './nav/navbar_container';
 
 const App = () => (
   <div>
-    <header>
-      <GreatingContainer/>
-    </header>
+    <NavbarContainer/>
 
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />

@@ -1,0 +1,63 @@
+.main-nav {
+  display: flex;
+  width: 98%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-image: url("http://res.cloudinary.com/cloudmccloud/image/upload/v1500527405/BetterBooks/wood_grain.jpg");
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+img.nav-logo {
+  height: 50px;
+  width: auto;
+}
+
+div.right-navbar {
+  display: flex;
+  width: auto;
+  flex-direction: row;
+}
+
+div.left-navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 20px;
+}
+
+button.nav-logout:hover {
+  cursor: pointer;
+}
+
+.nav-logo {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.nav-panel a {
+  display: flex;
+  height: 100%;
+  color: white;
+}
+
+.nav-panel:hover {
+  display: flex;
+  height: 100%;
+  color: white;
+}
+
+.nav-logout {
+  padding-right: 5px;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.nav-search {
+  font-size: 16px;
+  border-radius: 2px;
+}

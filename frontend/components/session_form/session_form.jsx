@@ -81,7 +81,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="login-background">
         <div className="login-form-container">
@@ -94,7 +93,7 @@ class SessionForm extends React.Component {
 
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className='pic-div'>
-              <img src="http://res.cloudinary.com/cloudmccloud/image/upload/v1500498258/koala_kygmbi.png" alt="Koala Mascot"/>
+              <img src="http://res.cloudinary.com/cloudmccloud/image/upload/v1500498258/BetterBooks/koala_kygmbi.png" alt="Koala Mascot"/>
             </div>
 
             <div className="login-form">
