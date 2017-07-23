@@ -16,7 +16,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 blurb        | text      | not null
-cover_pic        | string      | not null(will have a default)
+cover_img        | string      | not null(will have a default)
 author_id   | integer   | not null, foreign key (references users), indexed
 
 

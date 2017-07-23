@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718161039) do
+ActiveRecord::Schema.define(version: 20170720174055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "authors", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "blurb"
+    t.string "cover_img", null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_books_on_author_id"
+    t.index ["cover_img"], name: "index_books_on_cover_img", unique: true
+    t.index ["title"], name: "index_books_on_title", unique: true
+  end
+
+  create_table "bookshelves", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "book_id"
+    t.string "shelf_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_bookshelves_on_book_id"
+    t.index ["user_id", "book_id"], name: "index_bookshelves_on_user_id_and_book_id", unique: true
+    t.index ["user_id"], name: "index_bookshelves_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false

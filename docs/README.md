@@ -48,17 +48,18 @@ sufficient CSS styling:
 **Objective:** Books can be created, read, edited and destroyed through
 the API.
 
-### Phase 3: Reviews (2 days)
+### Phase 3: Bookshelves (2 day)
+
+**Objective:** Books the user has read belong on users bookshelf, user can visit other users bookshelves.
+
+### Phase 4: Reviews (2 days)
 
 **Objective:** Reviews belong to Books that can be created, read, edited and destroyed through the API.
 
-### Phase 4: Read status (1 day)
+### Phase 5: Read status (1 day)
 
 **Objective:** Books can be marked as read, want to read, or currently reading.
 
-### Phase 5: Bookshelves (2 day)
-
-**Objective:** Books the user has read belong on users bookshelf, user can visit other users bookshelves.
 
 ### Bonus Features (TBD)
 - [ ] Bonus: Search for books

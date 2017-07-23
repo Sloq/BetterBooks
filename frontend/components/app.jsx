@@ -6,14 +6,16 @@ import { AuthRoute } from '../util/route_util';
 import GreatingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import NavbarContainer from './nav/navbar_container';
+import BookIndexContainer from './books/book_index_container';
+import BookShowContainer from './book_show/book_show_container';
 
 const App = () => (
   <div>
     <NavbarContainer/>
-
+    <Route exact path='/' component={BookIndexContainer}/>
+    <Route exact path='/books/:BookId' component={BookShowContainer}/>
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
-
   </div>
 );
 

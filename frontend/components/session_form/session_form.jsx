@@ -20,6 +20,10 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -67,36 +71,45 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     if (this.props.errors) {
+      const errz = this.props.errors.join(", ");
       return(
-        <ul>
-
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
+        <p>{errz}</p>
       );
     }
+  }
+
+  loginHeader() {
+    let logOrSign;
+    if (this.props.formType === "login") {
+      logOrSign = "Log In";
+    } else {
+      logOrSign = "Sign In";
+    }
+    return(
+      <div className="sign-in-header">
+        Please {logOrSign} or {this.navLink()}
+      </div>
+    );
   }
 
   render() {
     return (
       <div className="login-background">
+
         <div className="login-form-container">
 
-          <div className="sign-in-header">
-            Please {this.props.formType} or {this.navLink()}
-
+          <div className='pic-div'>
+            <img src="http://res.cloudinary.com/cloudmccloud/image/upload/v1500498258/BetterBooks/koala_kygmbi.png" alt="Koala Mascot"/>
           </div>
 
+          {this.loginHeader()}
 
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            <div className='pic-div'>
-              <img src="http://res.cloudinary.com/cloudmccloud/image/upload/v1500498258/BetterBooks/koala_kygmbi.png" alt="Koala Mascot"/>
-            </div>
 
             <div className="login-form">
+              <div className="errors">
+                {this.renderErrors()}
+              </div>
 
               <div className="login-field">
                 Username
@@ -123,7 +136,7 @@ class SessionForm extends React.Component {
               <div className="login-field">
                 <button
                   className="log-in-button">
-                  {this.props.formType === "signup" ? "sign up" : "Log In"}
+                  {this.props.formType === "signup" ? "Sign Up" : "Log In"}
                 </button>
 
                 <button
@@ -131,9 +144,6 @@ class SessionForm extends React.Component {
                   onClick={ this.handleClick }>
                   Guest Sign In
                 </button>
-                <div className="errors">
-                {this.renderErrors()}
-                </div>
               </div>
 
             </div>

@@ -1,24 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// const sessionLinks = () => (
-//   <nav className="login-signup">
-//     <Link to="/login">Login</Link>
-//     <Link to="/signup">Sign up</Link>
-//   </nav>
-// );
-//
-// const personalGreeting = (currentUser, logout) => (
-// 	<hgroup className="header-group">
-//     <h2 className="header-name">Hi, {currentUser.username}!</h2>
-//     <button className="header-button" onClick={logout}>Log Out</button>
-// 	</hgroup>
-// );
-//
-// const Greeting = ({ currentUser, logout }) => (
-//   currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-// );
-
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -59,23 +41,26 @@ class Navbar extends React.Component {
 
   searchBar() {
     return (
-      <div>
-        <input className='nav-search' type="text" name="search" placeholder="Search.."/>
+      <div className="searchbar-div">
+
+        <input className='nav-search' type="text" name="search" placeholder="Search..."/>
       </div>
     );
   }
 
   userIconOrLogin() {
-    const user = this.props.currentUser;
-    if (user) {
+    const currentUser = this.props.currentUser;
+    if (currentUser) {
       return (
-        <div className='user-nav-icon'>
-          <img src={user.profile_pic} alt="user profile pic"/>
+        <div>
+          <Link to={`/user/${currentUser.id}`}>
+            <img className='user-nav-icon' src={currentUser.profile_pic} alt="user profile pic"/>
+          </Link>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className='nav-panel-right'>
           <Link to="/login">Login</Link>
         </div>
       );
@@ -93,7 +78,7 @@ class Navbar extends React.Component {
       );
     } else {
       return (
-        <div>
+        <div className='nav-panel-right'>
           <Link to="/signup">Sign up</Link>
         </div>
       );
@@ -101,13 +86,13 @@ class Navbar extends React.Component {
   }
 
   render() {
-    console.log(this.props);
-    console.log(this.props.currentUser);
-    console.log(this.props);
     return (
       <nav className='main-nav'>
         <div className='left-navbar'>
           {this.logoElement()}
+          <Link to={`/`}>
+          <div className="site-name-nav">BetterBooks</div>
+          </Link>
           {this.bookshelfElement()}
         </div>
         <div className='right-navbar'>

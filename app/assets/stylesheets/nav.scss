@@ -1,26 +1,40 @@
 .main-nav {
   display: flex;
-  width: 98%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-image: url("http://res.cloudinary.com/cloudmccloud/image/upload/v1500527405/BetterBooks/wood_grain.jpg");
+  width: 100%;
+  background-color: #303242;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
   font-size: 16px;
   color: white;
+  position: fixed;
+  z-index: 5;
 }
 
 img.nav-logo {
+  height: 40px;
+  width: auto;
+  margin: 4px;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+img.user-nav-icon {
   height: 50px;
   width: auto;
+  margin: 4px;
 }
 
 div.right-navbar {
   display: flex;
   width: auto;
   flex-direction: row;
+}
+
+.site-name-nav {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
 }
 
 div.left-navbar {
@@ -31,18 +45,49 @@ div.left-navbar {
 }
 
 button.nav-logout:hover {
+  background-color: #16202d;
   cursor: pointer;
 }
 
-.nav-logo {
-  margin-left: 5px;
-  margin-right: 5px;
+button.nav-logout {
+  padding-top: 21px;
+  padding-bottom: 22px;
+  border: none;
+  background-color: #303242;
+  color: white;
 }
 
 .nav-panel a {
   display: flex;
   height: 100%;
   color: white;
+  padding-top: 21px;
+  padding-bottom: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: 15px;
+}
+
+.nav-panel-right a {
+  display: flex;
+  // height: 100%;
+  color: white;
+  padding-top: 23px;
+  padding-bottom: 22px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.nav-panel a:hover {
+  background-color: #16202d;
+}
+.nav-panel-right a:hover {
+  background-color: #16202d;
+}
+
+.searchbar-div i {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .nav-panel:hover {
@@ -52,7 +97,8 @@ button.nav-logout:hover {
 }
 
 .nav-logout {
-  padding-right: 5px;
+  padding-right: 12px;
+  padding-left: 12px;
   font-size: 16px;
   border-radius: 3px;
 }
@@ -60,4 +106,7 @@ button.nav-logout:hover {
 .nav-search {
   font-size: 16px;
   border-radius: 2px;
+  padding: 3px;
+  margin-top: 17px;
+  margin-right: 7px;
 }

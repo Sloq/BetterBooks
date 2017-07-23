@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 div.login-form-container {
   display: flex;
-  width: 305px;
-  height: 300px;
+  width: 300px;
+  height: 388px;
   // background-color: #f3fff2;
   background-color: black;
   margin: 5px;
-  padding-top: 30px;
+  padding-top: 18px;
   padding-bottom: 35px;
   padding-left: 10px;
   padding-right: 10px;
@@ -32,8 +32,16 @@ div.login-form-container {
 }
 
 div.login-form-container img {
-  width: 75px;
+  width: 61px;
   height: auto;
+  margin-bottom: 5px;
+}
+
+.login-form div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 div.login-form-container form {
@@ -43,7 +51,7 @@ div.login-form-container form {
   align-items: center;
   flex-direction: row;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
   // background-color: maroon;
   padding: 10px;
 }
@@ -52,7 +60,7 @@ div.login-form-container form input {
   margin: 5px;
   padding: 2px;
   border-radius: 2px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   width: 80%;
   justify-content: flex-start;
@@ -86,11 +94,12 @@ div.login-background {
   justify-content: center;
   align-items: center;
   align-content: center;
+  z-index: 10;
 }
 
 button.log-in-button {
   padding: 2px;
-  margin: 5px;
+  margin: 7px;
   border-radius: 4px;
   width: 85%;
   font-size: 15px;
@@ -109,6 +118,32 @@ div.sign-in-header a {
 }
 
 div.errors {
-  font-size: 10px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.login_field {
+  display: flex;
+  align-items: center;
+}
+
+.login-form-box {
+  width: 260px;
+  display: flex;
+}
+
+.login-form-box {
+  width: 260px;
+}
+
+.login-form div {
+  margin: 7px;
+}
+
+.login-form-box p {
+  width: 240px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

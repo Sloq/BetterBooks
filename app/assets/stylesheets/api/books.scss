@@ -1,0 +1,78 @@
+// Place all the styles related to the api/books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-all-books {
+  display: flex;
+  width: 100%;
+  padding-top: 81px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.BookMainIndexItem {
+  display: flex;
+  margin: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.main-book-hold-div {
+  width: 180px;
+  height: 275px;
+}
+
+.book-main-description {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+}
+
+.book-index-pic {
+  width: 180px;
+  height: 270px;
+  border-radius: 4px;
+  transition: width, box-shadow 0.3s;
+  box-shadow: 0px 0px 5px grey;
+  position: absolute;
+}
+.book-index-pic:hover {
+  width: 205px;
+  height: auto;
+  border-radius: 4px;
+  position: absolute;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.book-show-component {
+  padding: 30px;
+  padding-top: 94px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.book-show-cover {
+  border-radius: 4px;
+  width: 260px;
+  height: 400px;
+  box-shadow: 3px 2px 5px grey;
+}
+
+.book-text {
+  display: flex;
+  min-width: 200px;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.book-text h2 {
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.book-text p {
+  margin: 3px;
+}
