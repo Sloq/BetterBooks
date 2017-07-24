@@ -27,7 +27,7 @@ class BookShow extends React.Component {
         <img className="book-show-cover" src={this.props.book.cover_img} alt={this.props.book.title}/>
         <div className="book-text">
           <h2>{this.props.book.title}</h2>
-          <p>by {this.props.book.author_id}</p>
+          <p>by {this.props.book.name}</p>
           <p>{this.props.book.blurb}</p>
         </div>
       </div>
