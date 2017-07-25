@@ -1,14 +1,13 @@
 # == Schema Information
 #
-# Table name: books
+# Table name: shelvings
 #
-#  id         :integer          not null, primary key
-#  title      :string           not null
-#  blurb      :text
-#  cover_img  :string           not null
-#  author_id  :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  bookshelf_id :integer          not null
+#  book_id      :integer          not null
+#  read_status  :string           not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

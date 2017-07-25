@@ -1,19 +1,19 @@
 # == Schema Information
 #
-# Table name: books
+# Table name: reviews
 #
 #  id         :integer          not null, primary key
-#  title      :string           not null
-#  blurb      :text
-#  cover_img  :string           not null
-#  author_id  :integer          not null
+#  user_id    :integer          not null
+#  book_id    :integer          not null
+#  rating     :integer          not null
+#  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class BookTest < ActiveSupport::TestCase
+class ReviewTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

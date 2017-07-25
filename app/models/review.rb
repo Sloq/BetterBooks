@@ -1,17 +1,19 @@
 # == Schema Information
 #
-# Table name: bookshelves
+# Table name: reviews
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer          not null
-#  shelf_type :string           not null
+#  book_id    :integer          not null
+#  rating     :integer          not null
+#  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Bookshelf < ApplicationRecord
-  validates :user, :shelf_type, presence: true
+class Review < ApplicationRecord
+  validates :user, :book, :rating, presence: true
 
   belongs_to :user
-  has_many :shelvings
+  belongs_to :book
 end
