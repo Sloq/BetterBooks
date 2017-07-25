@@ -1,5 +1,5 @@
-@bookshelf.map do |bookshelf_item|
-  json.set! bookshelf_item.id do
-    json.partial! 'bookshelf_item', bookshelf: bookshelf_item
+@shelf.map do |shelving|
+  json.set! shelving.id do
+    json.partial! 'bookshelf_shelvings', shelving: shelving
   end
 end

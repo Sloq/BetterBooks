@@ -19,6 +19,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   has_many :bookshelves
+  has_many :shelvings, through: :bookshelves
+  has_many :books, through: :shelvings
 
   attr_reader :password
 

@@ -13,5 +13,6 @@ class Bookshelf < ApplicationRecord
   validates :user, :shelf_type, presence: true
 
   belongs_to :user
-  has_many :shelvings
+  has_many :shelvings, dependent: :destroy
+
 end
