@@ -1,2 +1,0 @@
-class ShelvingsController < ApplicationController
-end

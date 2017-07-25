@@ -40,20 +40,20 @@ book4 = Book.create!(title: "The Pale King", cover_img: "https://res.cloudinary.
 
 book5 = Book.create!(title: "Romeo and Juliet", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609657/BetterBooks/covers/Romeo_and_Juliet.jpg", blurb: "youth, love, death.", author_id: author5.id)
 
-bookshelf1 = Bookshelf.create!(user_id: guest.id, book_id: book1.id, shelf_type: "all", read_status: "read")
+bookshelf1 = Bookshelf.create!(user_id: guest.id, book_id: book1.id, shelf_name: "all", read_status: "read")
 
-bookshelf2 = Bookshelf.create!(user_id: guest.id, book_id: book2.id, shelf_type: "all", read_status: "read")
+bookshelf2 = Bookshelf.create!(user_id: guest.id, book_id: book2.id, shelf_name: "all", read_status: "read")
 
-bookshelf3 = Bookshelf.create!(user_id: guest.id, book_id: book3.id, shelf_type: "all", read_status: "read")
+bookshelf3 = Bookshelf.create!(user_id: guest.id, book_id: book3.id, shelf_name: "all", read_status: "read")
 
-bookshelf4 = Bookshelf.create!(user_id: guest.id, book_id: book4.id, shelf_type: "all", read_status: "read")
+bookshelf4 = Bookshelf.create!(user_id: guest.id, book_id: book4.id, shelf_name: "all", read_status: "read")
 
-bookshelf5 = Bookshelf.create!(user_id: user.id, book_id: book3.id, shelf_type: "all", read_status: "read")
+bookshelf5 = Bookshelf.create!(user_id: user.id, book_id: book3.id, shelf_name: "all", read_status: "read")
 
-bookshelf6 = Bookshelf.create!(user_id: user2.id, book_id: book4.id, shelf_type: "all", read_status: "read")
+bookshelf6 = Bookshelf.create!(user_id: user2.id, book_id: book4.id, shelf_name: "all", read_status: "read")
 
-bookshelf7 = Bookshelf.create!(user_id: user3.id, book_id: book5.id, shelf_type: "all", read_status: "read")
+bookshelf7 = Bookshelf.create!(user_id: user3.id, book_id: book5.id, shelf_name: "all", read_status: "read")
 
-bookshelf8 = Bookshelf.create!(user_id: user3.id, book_id: book1.id, shelf_type: "all", read_status: "read")
+bookshelf8 = Bookshelf.create!(user_id: user3.id, book_id: book1.id, shelf_name: "all", read_status: "read")
 
-bookshelf9 = Bookshelf.create!(user_id: user2.id, book_id: book2.id, shelf_type: "all", read_status: "read")
+bookshelf9 = Bookshelf.create!(user_id: user2.id, book_id: book2.id, shelf_name: "all", read_status: "read")

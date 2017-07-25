@@ -1,13 +1,20 @@
 class Api::ShelvingsController < ApplicationController
-
-  def show
-    # @shelving = Shelving.find_by(id: params[:id])
-    @shelving = current_user.shelvings.find_by(book_id: params[:book_id])
-  end
+  # def show
+  #   # @shelving = Shelving.find_by(id: params[:id])
+  #   @shelving = current_user.shelvings.find_by(book_id: params[:book_id])
+  # end
 
   def index
+    # fetch all and distinct where read status
+    # use index because we have to look through everything and filter it isnt a particular row
+    #
     user = user.find_by(id: params[:user_id])
-    @shelvings = user.shelvings.where(read_status: params[:read_status])
+    shelvings = user.shelvings.select(:book_id).distinct
+    if params[:read_status] == "Read" || params[:read_status] == "To Read" || params[:read_status] == "Currently Reading"
+      @shelvings = shelvings.where(read_status: params[:read_status])
+    else
+      @shelvings = shelvings
+    end
   end
 
   def create
@@ -17,15 +24,7 @@ class Api::ShelvingsController < ApplicationController
       read_status: params[:read_status]
     )
     if new_shelving.save!
-      all_shelf_shelving = current_user.bookshelves.where(shelf_type: "all").shelvings.where(book_id: params[:book_id])
-
-      if !all_shelf_shelving
-        Shelving.create!(
-          book_id: params[:book_id],
-          bookshelf_id: current_user.bookshelves.find_by(shelf_type: "all"),
-          read_status: params[:read_status]
-        )
-      end
+      all_shelf_shelving = current_user.bookshelves.where(shelf_name: "all").shelvings.where(book_id: params[:book_id])
 
       @shelving = new_shelving
       render "/api/shelvings/show"

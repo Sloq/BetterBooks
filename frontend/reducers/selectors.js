@@ -7,7 +7,7 @@ export const booksArray = ({ allBooks }) => (
 );
 
 export const types = ({ allShelves }) => (
-  Object.keys(allShelves).map(id => allShelves[id].shelf_type)
+  Object.keys(allShelves).map(id => allShelves[id].shelf_name)
 
   // uniq
 );
