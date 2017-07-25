@@ -6,8 +6,6 @@ class BookIndexItem extends React.Component {
     super(props);
   }
 
-
-
   render() {
     const { book } = this.props;
     const { title, cover_img, author_id } = book;

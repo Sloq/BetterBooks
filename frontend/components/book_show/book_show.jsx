@@ -13,13 +13,10 @@ class BookShow extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
     this.props.requestBook(this.props.match.params.BookId);
   }
 
   render() {
-    // const focus = this.props.state.books.focus;
-    // console.log(focus);
     console.log(this.props.book);
     console.log(this.props.author_id);
     return (

@@ -21,8 +21,8 @@ class Navbar extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className='nav-panel'>
-          <Link to={`/bookshelf/${currentUser.id}`}>
-            Bookshelf
+          <Link to={`/user/${currentUser.id}/bookshelf`}>
+            My Books
           </Link>
         </div>
       );

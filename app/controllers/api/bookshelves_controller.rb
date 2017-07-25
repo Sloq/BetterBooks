@@ -12,23 +12,20 @@ class Api::BookshelvesController < ApplicationController
   end
 
   def update
-    users_shelves = current_user.bookshelves
-    target_books = users_shelves.select do |shelve_book|
-      shelve_book.book_id == params[:book_id]
+    target_shelf_items = current_user.bookshelves.select do |shelve_book|
+      p "+++++++++++==========================================++++++++++++"
+      p shelve_book
+      p shelve_book.book_id == params[:book_id].to_i
+
     end
-    if target_books.empty?
-      new_shelf_item = Bookshelf.new(book_id: params[:book_id], read_status: params[:readStatus], shelf_type: "all", user_id: current_user.id)
+    if target_shelf_items.empty?
+      new_shelf_item = Bookshelf.new(book_id: params[:book_id], read_status: params[:read_status], shelf_type: "all", user_id: current_user.id)
       new_shelf_item.save!
-      @bookshelf = new_shelf_item
     else
-      target_books.each do |book|
-        book.read_status = params[:readStatus]
-        book.save!
+      target_shelf_items.each do |book|
+        book.update_attributes!(read_status: params[:read_status])
       end
-      @bookshelf = target_books.first
     end
-
-
     @bookshelf = current_user.bookshelves
     render "/api/bookshelves/index"
   end
@@ -40,6 +37,13 @@ class Api::BookshelvesController < ApplicationController
     end
     target_shelf.each(&:destroy)
     # not sure what to render
+    @bookshelf = current_user.bookshelves
+    render "/api/bookshelves/index"
+  end
+
+  def create
+    new_shelf_type = Bookshelf.new(shelf_type: "all", user_id: current_user.id)
+    new_shelf_type.save!
     @bookshelf = current_user.bookshelves
     render "/api/bookshelves/index"
   end

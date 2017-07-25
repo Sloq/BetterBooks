@@ -1,4 +1,4 @@
-export const fetchBookshelf = (bookshelfType, userId) => (
+export const fetchTypeBookshelf = (bookshelfType, userId) => (
   $.ajax({
     method: 'GET',
     url: `/api/users/${userId}/bookshelves/${bookshelfType}`
@@ -12,11 +12,11 @@ export const fetchAllBookshelves = (userId) => (
   })
 );
 
-export const patchBookshelf = (bookId, readStatus) => (
+export const patchBookshelf = (bookId, read_status) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/books/${bookId}/bookshelves/1`,
-    data: { readStatus }
+    url: `/api/books/${bookId}/bookshelves/`,
+    data: { read_status }
   })
 );
 
@@ -28,7 +28,7 @@ export const postBookshelf = (userId, bookshelfType ) => (
   })
 );
 
-export const deleteBookshelf = (bookshelfType, userId) => (
+export const destroyBookshelf = (bookshelfType, userId) => (
   $.ajax({
     method: 'DELETE',
     url: `/api/users/${userId}/bookshelves/${bookshelfType}`

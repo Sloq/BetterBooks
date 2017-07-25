@@ -1,3 +1,34 @@
 // Place all the styles related to the api/bookshelves controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user_books {
+  display: flex;
+  padding: 30px;
+  padding-top: 94px;
+}
+
+.bookshelf-sidebar {
+  padding: 15px;
+  display: flex;
+}
+
+.users-all-bookshelf {
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+}
+
+.bookshelf-li {
+  display: flex;
+  flex-direction: row;
+}
+
+.bookshelf-entry {
+  display: flex;
+  flex-direction: row;
+}
+
+.bookshelf-entry * {
+  width: 90px;
+}
