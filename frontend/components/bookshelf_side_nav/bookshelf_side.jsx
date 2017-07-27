@@ -19,12 +19,23 @@ class BookshelfSide extends React.Component {
 
   shelvesUl() {
     // add a delete button action deleteBookshelf
-    return <div></div>;
+    if (this.props.shelfNames[0]) {
+      return (
+      this.props.shelfNames.map(shelf => (
+        <li>
+          <Link to={`/user/${this.props.match.params.userId}/bookshelf/${shelf}`}>
+            {shelf}
+          </Link>
+        </li>
+      )));
+    } else {
+      return <div></div>;
+    }
   }
 
   shelfCreateOrNot() {
     if (this.props.currentUserId === this.props.match.params.userId) {
-      return CreateShelf;
+      return CreateShelf();
     } else {
       return (
         <div></div>

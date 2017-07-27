@@ -8,9 +8,9 @@ class Api::ShelvingsController < ApplicationController
     # fetch all and distinct where read status
     # use index because we have to look through everything and filter it isnt a particular row
     #
-    user = user.find_by(id: params[:user_id])
-    shelvings = user.shelvings.select(:book_id).distinct
-    if params[:read_status] == "Read" || params[:read_status] == "Want to Read" || params[:read_status] == "Currently Reading"
+    user = User.find_by(id: params[:userId])
+    shelvings = user.shelvings.select('distinct on (book_id) *')
+    if params[:readStatus] == "Read" || params[:readStatus] == "Want to Read" || params[:readStatus] == "Currently Reading"
       @shelvings = shelvings.where(read_status: params[:readStatus])
     else
       @shelvings = shelvings
