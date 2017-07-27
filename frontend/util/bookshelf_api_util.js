@@ -1,14 +1,14 @@
-export const fetchBookshelfByName = (shelfName, userId) => (
-  $.ajax({
-    method: 'GET',
-    url: `/api/users/${userId}/bookshelves/${shelfName}`
-  })
-);
-
 export const fetchAllBookshelves = (userId) => (
   $.ajax({
     method: 'GET',
     url: `/api/users/${userId}/bookshelves/`
+  })
+);
+
+export const fetchBookshelfByName = (shelfName, userId) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/users/${userId}/bookshelves/${shelfName}`
   })
 );
 

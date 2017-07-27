@@ -9,6 +9,7 @@ Author.destroy_all
 User.destroy_all
 Book.destroy_all
 Bookshelf.destroy_all
+Shelving.destroy_all
 
 author1 = Author.create!(name: "Chuck Palahniuk")
 
@@ -30,9 +31,9 @@ user4 = User.create!(username: "Bailey", password: "batman", profile_pic: "http:
 
 guest = User.create!(username: "Guest", password: "guest123456", profile_pic: "http://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "guest@guestlogin.com")
 
-book1 = Book.create!(title: "Slaughterhouse-Five", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609657/BetterBooks/covers/slaughter-house-five.jpg", blurb: "aliens, timetravel, so it goes", author_id: author1.id)
+book1 = Book.create!(title: "Slaughterhouse-Five", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609657/BetterBooks/covers/slaughter-house-five.jpg", blurb: "aliens, timetravel, so it goes", author_id: author2.id)
 
-book2 = Book.create!(title: "Survivor", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609658/BetterBooks/covers/survivor.jpg", blurb: "religious cults and escaping your upbringing", author_id: author2.id)
+book2 = Book.create!(title: "Survivor", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609658/BetterBooks/covers/survivor.jpg", blurb: "religious cults and escaping your upbringing", author_id: author1.id)
 
 book3 = Book.create!(title: "Dharma Bums", cover_img: "http://res.cloudinary.com/cloudmccloud/image/upload/v1500609658/BetterBooks/covers/the_dharma_bums.jpg", blurb: "life on the road, living the Diamond Sutra", author_id: author3.id)
 
@@ -40,20 +41,55 @@ book4 = Book.create!(title: "The Pale King", cover_img: "https://res.cloudinary.
 
 book5 = Book.create!(title: "Romeo and Juliet", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609657/BetterBooks/covers/Romeo_and_Juliet.jpg", blurb: "youth, love, death.", author_id: author5.id)
 
-bookshelf1 = Bookshelf.create!(user_id: guest.id, book_id: book1.id, shelf_name: "all", read_status: "read")
+bookshelf1 = Bookshelf.create!(user_id: guest.id, shelf_name: "favorites")
 
-bookshelf2 = Bookshelf.create!(user_id: guest.id, book_id: book2.id, shelf_name: "all", read_status: "read")
+bookshelf2 = Bookshelf.create!(user_id: guest.id, shelf_name: "great novels")
 
-bookshelf3 = Bookshelf.create!(user_id: guest.id, book_id: book3.id, shelf_name: "all", read_status: "read")
+bookshelf3 = Bookshelf.create!(user_id: guest.id, shelf_name: "fun")
 
-bookshelf4 = Bookshelf.create!(user_id: guest.id, book_id: book4.id, shelf_name: "all", read_status: "read")
+bookshelf4 = Bookshelf.create!(user_id: guest.id, shelf_name: "boring")
 
-bookshelf5 = Bookshelf.create!(user_id: user.id, book_id: book3.id, shelf_name: "all", read_status: "read")
+bookshelf5 = Bookshelf.create!(user_id: user.id, shelf_name: "favorites")
 
-bookshelf6 = Bookshelf.create!(user_id: user2.id, book_id: book4.id, shelf_name: "all", read_status: "read")
+bookshelf5 = Bookshelf.create!(user_id: guest.id, shelf_name: "Default")
 
-bookshelf7 = Bookshelf.create!(user_id: user3.id, book_id: book5.id, shelf_name: "all", read_status: "read")
+bookshelf6 = Bookshelf.create!(user_id: user2.id, shelf_name: "funny")
 
-bookshelf8 = Bookshelf.create!(user_id: user3.id, book_id: book1.id, shelf_name: "all", read_status: "read")
+bookshelf7 = Bookshelf.create!(user_id: user3.id, shelf_name: "dramatic")
 
-bookshelf9 = Bookshelf.create!(user_id: user2.id, book_id: book2.id, shelf_name: "all", read_status: "read")
+bookshelf8 = Bookshelf.create!(user_id: user3.id, shelf_name: "favorites")
+
+bookshelf9 = Bookshelf.create!(user_id: user2.id, shelf_name: "not good")
+
+shelvingGuest1 = Shelving.create!(
+  bookshelf_id: bookshelf1.id, book_id: book1.id, read_status: "Read"
+)
+shelvingGuest2 = Shelving.create!(
+  bookshelf_id: bookshelf2.id, book_id: book2.id, read_status: "Want To Read"
+)
+shelvingGuest3 = Shelving.create!(
+  bookshelf_id: bookshelf3.id, book_id: book3.id, read_status: "Currently Reading"
+)
+shelvingGuest4 = Shelving.create!(
+  bookshelf_id: bookshelf1.id, book_id: book4.id, read_status: "Read"
+)
+shelvingUser_1 = Shelving.create!(
+  bookshelf_id: bookshelf5.id, book_id: book1.id, read_status: "Read"
+)
+shelvingUser_2 = Shelving.create!(
+  bookshelf_id: bookshelf6.id, book_id: book2.id, read_status: "Want to Read"
+)
+shelvingUser_3 = Shelving.create!(
+  bookshelf_id: bookshelf7.id, book_id: book3.id, read_status: "Read"
+)
+shelvingUser2_1 = Shelving.create!(
+  bookshelf_id: bookshelf8.id, book_id: book1.id, read_status: "Read"
+)
+shelvingUser2_2 = Shelving.create!(
+  bookshelf_id: bookshelf9.id, book_id: book2.id, read_status: "Read"
+)
+shelvingUser3_1 = Shelving.create!(
+  bookshelf_id: bookshelf1.id, book_id: book3.id, read_status: "Currently Reading"
+)
+shelvingUser4_1 = Shelving.create!(bookshelf_id: bookshelf5.id, book_id: book5.id, read_status: "Read"
+)

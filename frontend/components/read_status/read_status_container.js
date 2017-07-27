@@ -1,29 +1,32 @@
 import { connect } from 'react-redux';
 import ReadStatus from './read_status';
-import TypeBookshelf from './type_bookshelf';
-import { requestAllBookshelves, requestTypeBookshelf, editBookshelfStatus, deleteBookshelf, createBookshelf } from '../../actions/bookshelf_actions';
-import { types, viewShelfArray, allUniqBooks } from '../../reducers/selectors';
+import { requestBookShelving,
+  updateShelving, createShelving } from '../../actions/shelving_actions';
+import { requestAllBookshelves } from
+  '../../actions/bookshelf_actions';
+import { shelfNameArray } from '../../reducers/selectors';
 
-const mapStateToProps = ({bookshelves}) => ({
-  types: types(bookshelves),
-  givenTypeBooks: viewShelfArray(bookshelves),
-  allUserBooks: allUniqBooks(bookshelves)
+
+const mapStateToProps = (state) => ({
+  state: state,
+  shelfNames: state.bookshelves.shelfNames,
+  currentUserId: state.session.currentUser.id,
+  readStatus: state.shelvings.currentBook.read_status,
+  shelvesIn: state.shelvings.currentBook.inShelves
 });
 
 const mapDispatchToProps = dispatch => ({
+  requestBookShelving: bookId =>
+    dispatch(requestBookShelving(bookId)),
+  updateShelving: (bookId, shelf_id, readStatus) =>
+    dispatch(updateShelving(bookId, shelf_id, readStatus)),
+  createShelving: (bookId, bookshelfId, readStatus) =>
+    dispatch(createShelving(bookId, bookshelfId, readStatus)),
   requestAllBookshelves: userId =>
-    dispatch(requestAllBookshelves(userId)),
-  requestTypeBookshelf: (bookshelfType, userId) =>
-    dispatch(requestTypeBookshelf(bookshelfType, userId)),
-  editBookshelfStatus: (bookId, readStatus) =>
-    dispatch(editBookshelfStatus(bookId, readStatus)),
-  deleteBookshelf: (bookshelfType, userId) =>
-    dispatch(deleteBookshelf(bookshelfType, userId)),
-  createBookshelf:(userId, bookshelfType) =>
-    dispatch(createBookshelf(userId, bookshelfType))
+    dispatch(requestAllBookshelves(userId))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AllBookshelf);
+)(ReadStatus);

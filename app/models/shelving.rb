@@ -15,5 +15,4 @@ class Shelving < ApplicationRecord
 
   belongs_to :book
   belongs_to :bookshelf
-  belongs_to :user
 end

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import BookshelfBook from './bookshelf_book';
-import BookshelfSidebar from './bookshelf_sidebar';
+// import BookshelfSidebar from './bookshelf_sidebar';
 
 class AllBookshelf extends React.Component {
   constructor(props) {

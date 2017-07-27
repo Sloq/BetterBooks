@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/bookshelf_api_util';
 
 export const RECEIVE_ALL_BOOKSHELVES = "RECEIVE_ALL_BOOKSHELVES";
-export const RECEIVE_TYPE_BOOKSHELVES = "RECEIVE_TYPE_BOOKSHELVES";
+export const RECEIVE_BOOKSHELF_BY_NAME = "RECEIVE_BOOKSHELF_BY_NAME";
 // export const REMOVE_BOOKSHELF = "REMOVE_BOOKSHELF";
 
 export const receiveAllBookshelves = bookshelves => ({
@@ -9,9 +9,9 @@ export const receiveAllBookshelves = bookshelves => ({
   bookshelves
 });
 
-export const receiveTypeBookshelves = typeBookshelves => ({
-  type: RECEIVE_TYPE_BOOKSHELVES,
-  typeBookshelves
+export const receiveBookshelfByName = bookshelf => ({
+  type: RECEIVE_BOOKSHELF_BY_NAME,
+  bookshelf
 });
 
 export const requestAllBookshelves = userId => dispatch => {
@@ -19,22 +19,17 @@ export const requestAllBookshelves = userId => dispatch => {
   then(bookshelves => dispatch(receiveAllBookshelves(bookshelves)));
 };
 
-export const requestTypeBookshelf = (bookshelfType, userId) => dispatch => {
-  APIUtil.fetchTypeBookshelf(bookshelfType, userId).
-  then(typeBookshelves => dispatch(receiveTypeBookshelves(typeBookshelves)));
+export const requestNamedBookshelf = (shelfName, userId) => dispatch => {
+  APIUtil.fetchBookshelfByName(shelfName, userId).
+  then(bookshelf => dispatch(receiveBookshelfByName(bookshelf)));
 };
 
-export const editBookshelfStatus = (bookId, readStatus) => dispatch => {
-  APIUtil.patchBookshelf(bookId, readStatus).
+export const createBookshelf = (userId, shelfName) => dispatch => {
+  APIUtil.postBookshelf(userId, shelfName).
   then(bookshelves => dispatch(receiveAllBookshelves(bookshelves)));
 };
 
-export const deleteBookshelf = (bookshelfType, userId) => dispatch => {
-  APIUtil.destroyBookshelf(bookshelfType).
-  then(bookshelves => dispatch(receiveAllBookshelves(bookshelves)));
-};
-
-export const createBookshelf = (userId, bookshelfType) => dispatch => {
-  APIUtil.postBookshelf(userId, bookshelfType).
+export const deleteBookshelf = (shelfName, userId) => dispatch => {
+  APIUtil.destroyBookshelf(shelfName, userId).
   then(bookshelves => dispatch(receiveAllBookshelves(bookshelves)));
 };

@@ -15,5 +15,4 @@ class Bookshelf < ApplicationRecord
 
   belongs_to :user
   has_many :shelvings, dependent: :destroy
-
 end

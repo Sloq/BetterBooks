@@ -27,12 +27,6 @@ class BookshelfBook extends React.Component {
               {name}
             </Link>
           </li>
-          <li>
-            Average Rating
-          </li>
-          <li>
-            Rating
-          </li>
         </ul>
       </li>
     );

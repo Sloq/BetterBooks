@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :books, except: [:create, :edit, :destroy] do
       resources :reviews, only: [:create, :index]
-      resources :shelvings, only: [:index, :create]
-      resources :shelvings, only: [:destroy]
+      resources :shelvings, only: [:show, :create, :destroy]
       resources :shelvings, only: [:update], param: :read_status
     end
+    resources :shelvings, only: [:index]
     patch "books/:book_id/bookshelves/", to: 'bookshelves#update'
     resources :authors, only: [:show]
     # resources :reviews

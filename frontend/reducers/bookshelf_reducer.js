@@ -1,8 +1,8 @@
-import { RECEIVE_ALL_BOOKSHELVES, RECEIVE_TYPE_BOOKSHELVES } from '../actions/bookshelf_actions';
+import { RECEIVE_ALL_BOOKSHELVES, RECEIVE_BOOKSHELF_BY_NAME } from '../actions/bookshelf_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
-  allShelves: {},
+  shelfNames: [],
   viewingShelf: {}
 };
 
@@ -12,11 +12,11 @@ const BookshelfReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_ALL_BOOKSHELVES:
       newState = merge({}, state);
-      newState.allShelves = action.bookshelves;
+      newState.shelfNames = action.bookshelves;
       return newState;
-    case RECEIVE_TYPE_BOOKSHELVES:
+    case RECEIVE_BOOKSHELF_BY_NAME:
       newState = merge({}, state);
-      newState.viewingShelf = action.typeBookshelves;
+      newState.viewingShelf = action.bookshelf;
       return newState;
     default:
       return state;
