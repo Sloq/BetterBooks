@@ -50,7 +50,7 @@
   padding: 30px;
   padding-top: 94px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .book-show-cover {
@@ -62,15 +62,25 @@
 
 .book-text {
   display: flex;
-  min-width: 200px;
+  min-width: 300px;
   padding: 20px;
   flex-direction: column;
 }
 
 .book-text h2 {
   margin-bottom: 5px;
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.book-show-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.book-text h3 {
+  font-size: 22px;
+  font-weight: 500px;
 }
 
 .book-text p {
@@ -78,7 +88,81 @@
 }
 
 .read-status-book-show {
-  height: 300px;
-  width: 300px;
-  background-color: orange;
+  height: 350px;
+  width: 320px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 35px;
+  border-left: solid 1px black;
+  padding-left: 15px;
+  font-size: 18px;
+
+
+}
+
+.status-form {
+  padding: 2px;
+  margin: 7px;
+  border-radius: 4px;
+}
+
+.read-status-book-show button {
+  margin: 5px;
+  color: white;
+  background-color: #182059;
+  height: 30px;
+  width: 148px;
+  border-radius: 4px;
+  border-color: #303242;
+  font-size: 14px;
+}
+
+.read-status-book-show button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #16202d;
+}
+
+.status-form {
+  min-width: 275px;
+  display: flex;
+  justify-content: center;
+}
+
+.read-status-book-show select:hover {
+  cursor: pointer;
+}
+
+.read-status-book-show select {
+  margin: 5px;
+  height: 30px;
+  border-radius: 4px;
+
+}
+
+.read-status-book-show h2 {
+  font-size: 25px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.read-status-book-show ul {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.read-status-book-show ul li {
+  padding: 10px;
+  font-size: 22px;
+}
+
+.book-main-description {
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  max-width: 180px;
+  overflow: hidden;
 }

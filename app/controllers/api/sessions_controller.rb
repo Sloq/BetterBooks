@@ -2,7 +2,7 @@ class Api::SessionsController < ApplicationController
 
   def create
     @user = User.validates_by_credentials(params[:user][:username],
-                                          params[:user][:password])
+            params[:user][:password])
     if @user
       log_in(@user)
       render "/api/users/show"

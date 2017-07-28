@@ -20,11 +20,13 @@ class BookShow extends React.Component {
   render() {
     return (
       <div className="book-show-component">
-        <img className="book-show-cover" src={this.props.book.cover_img} alt={this.props.book.title}/>
-        <div className="book-text">
-          <h2>{this.props.book.title}</h2>
-          <p>by {this.props.book.name}</p>
-          <p>{this.props.book.blurb}</p>
+        <div className="book-show-left">
+          <img className="book-show-cover" src={this.props.book.cover_img} alt={this.props.book.title}/>
+          <div className="book-text">
+            <h2>{this.props.book.title}</h2>
+            <p>by</p> <h3>{this.props.book.name}</h3>
+            <p>{this.props.book.blurb}</p>
+          </div>
         </div>
         <ReadStatusContainer/>
       </div>

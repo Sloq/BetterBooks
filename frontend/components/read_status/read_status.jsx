@@ -123,13 +123,13 @@ class ReadStatus extends React.Component {
     if (this.props.currentUser) {
     return (
       <div className="read-status-book-show">
-        {this.props.readStatus}
+        <h2>{this.props.readStatus}</h2>
         <div>
           {this.changeReadStatusDropdown()}
         </div>
 
         <ul>
-          Current Shelves:
+          <h2>Current Shelves:</h2>
           {this.currentShelves()}
         </ul>
 

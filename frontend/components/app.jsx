@@ -3,13 +3,11 @@ import { Provider } from 'react-redux';
 import { Route, Redirect, Switch, Link, HashRouter }
   from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
-import GreatingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import NavbarContainer from './nav/navbar_container';
 import BookIndexContainer from './books/book_index_container';
 import BookShowContainer from './book_show/book_show_container';
 import BookshelfContainer from './bookshelf/bookshelf_container';
-// <Route exact path='/user/:userId/bookshelf' component={BookshelfContainer}/>
 
 const App = () => (
   <div>

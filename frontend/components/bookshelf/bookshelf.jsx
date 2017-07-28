@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 import BookshelfBook from './bookshelf_defaults_book';
 import NamedShelfBook from './named_bookshelf_book';
 import BookshelfSideContainer from '../bookshelf_side_nav/bookshelf_side_container';
-// import BookshelfSidebar from './bookshelf_sidebar';
 
 class Bookshelf extends React.Component {
   constructor(props) {
@@ -12,7 +11,6 @@ class Bookshelf extends React.Component {
 
   componentDidMount() {
     this.props.requestShelvings(this.props.match.params.user_id, this.props.match.params.shelf_name);
-    console.log(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -39,6 +37,7 @@ class Bookshelf extends React.Component {
       if (books[0]) {
         return books.map(book =>
           <BookshelfBook
+            key={book[0]}
             book={book}
           />
         );

@@ -6,8 +6,6 @@ class BookshelfBook extends React.Component {
     super(props);
   }
 
-  // <Link to={`/authors/${name}/`}>
-  // </Link>
   render() {
     const { book } = this.props;
     const { title, cover_img, name, read_status, id } = book[1];

@@ -9,26 +9,6 @@ class Api::BooksController < ApplicationController
     render "/api/books/show"
   end
 
-  # def create
-  #   @book = Book.new(book_params)
-  #
-  #   if @book.save
-  #     render :show
-  #   else
-  #     render json: @book.errors.full_messages, status: 422
-  #   end
-  # end
-  #
-  # def update
-  #   @book = Book.find(params[:id])
-  #
-  #   if @book.update(book_params)
-  #     render :show
-  #   else
-  #     render json: @book.errors.full_messages, status: 422
-  #   end
-  # end
-
   private
 
   def book_params

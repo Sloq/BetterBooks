@@ -29,16 +29,6 @@ class Navbar extends React.Component {
     }
   }
 
-  // browseElement() {
-  //   return (
-  //     <div>
-  //       <Link to={`/bookshelf/${currentUser.id}`}>
-  //         Bookshelf
-  //       </Link>
-  //     </div>
-  //   );
-  // }
-
   // searchBar() {
   //   return (
   //     <div className="searchbar-div">
