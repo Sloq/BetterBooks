@@ -96,7 +96,6 @@ class ReadStatus extends React.Component {
   }
 
   shelfDropOptions() {
-    // let difference = this.props.shelfNames.filter(x => this.props.shelvesIn.indexOf(x) === -1);
     return (
       this.props.shelfNames.map(name => (
         <option key={Object.keys(name)[0]} value={Object.keys(name)[0]}>{Object.values(name)[0]}</option>

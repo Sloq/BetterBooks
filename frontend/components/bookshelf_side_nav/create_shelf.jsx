@@ -21,12 +21,11 @@ class CreateShelf extends React.Component {
       this.setState({errors: "Can't Create Duplicate Shelves"});
       this.setState({shelfName: ""});
     } else {
-      this.props.createBookshelf(this.props.currentUserId, shelf).then(
-        () => this.setState({
+      this.props.createBookshelf(this.props.currentUserId, shelf);
+      this.setState({
           shelfName: "",
           errors: ""
-        })
-      );
+        });
     }
   }
 
@@ -38,7 +37,7 @@ class CreateShelf extends React.Component {
 
         <form className="create-shelf-form" onSubmit={ this.handleSubmit }>
 
-          <label>Shelf Name:
+          <label className='create-new-shelf'>Create New Shelf:
             <input
               className="input"
               ref="shelfName"

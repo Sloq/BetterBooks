@@ -17,26 +17,35 @@ class BookshelfSide extends React.Component {
       this.props.requestAllBookshelves(nextProps.match.params.user_id);
     }
   }
-
   shelvesUl() {
     const id = this.props.match.params.user_id;
-    if (this.props.shelfNames[0]) {
-      return (
-      this.props.shelfNames.map(name => (
-        <li key={Object.keys(name)}>
-          <Link to={`/user/${id}/bookshelf/${Object.values(name)[0]}`}>
-            {Object.values(name)[0]}
+    const shelfies = this.props.shelfNames;
+    const newShelfArray = [];
+    if (shelfies[0]) {
+      shelfies.forEach(shelf => {
+        if (shelf.shelfName === "Default") {
+          return;
+        }
+        newShelfArray.push(<li key={shelf.shelfId}>
+          <Link to={`/user/${id}/bookshelf/${shelf.shelfName}`}>
+            {shelf.shelfName}
           </Link>
-        </li>
-      )));
+        </li>);
+      }
+    );
+    return newShelfArray;
     } else {
       return <div></div>;
     }
   }
 
   shelfCreateOrNot() {
-    if (this.props.currentUser.id === this.props.match.params.user_id) {
-      return CreateShelf();
+    if (this.props.currentUser.id == this.props.match.params.user_id) {
+      return (<CreateShelf
+        shelfNames={this.props.shelfNames}
+        createBookshelf={this.props.createBookshelf}
+        currentUserId={this.props.currentUserId}
+         />);
     } else {
       return (
         <div></div>
@@ -49,12 +58,12 @@ class BookshelfSide extends React.Component {
     const id = this.props.match.params.user_id;
     return (
       <div className="bookshelf-nav">
-        Bookshelves
+        <h2>Bookshelves</h2>
         <ul className="default-shelves">
           <Link to={`/user/${id}/bookshelf/all`} >
             All
           </Link>
-          <Link to={`/user/${id}/bookshelf/read`} >
+          <Link to={`/user/${id}/bookshelf/read`} activeStyle={{ color: 'red' }}>
             Read
           </Link>
           <Link to={`/user/${id}/bookshelf/currently_reading`} >

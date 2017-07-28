@@ -66,8 +66,12 @@
   flex-direction: column;
   max-width: 240px;
   min-height: 325px;
-  max-height: 400px;
+  max-height: 80%;
   border-bottom: 1px solid grey;
+}
+
+.bookshelf-nav * {
+  margin-bottom: 5px;
 }
 
 .bookshelf-nav ul {
@@ -126,4 +130,8 @@
 .user-created-shelves {
   display: flex;
   flex-direction: column;
+}
+
+.create-new-shelf {
+  font-size: 20px;
 }

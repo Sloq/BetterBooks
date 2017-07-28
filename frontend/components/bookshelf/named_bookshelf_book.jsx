@@ -13,7 +13,6 @@ class NamedShelfBook extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { book, shelfId } = this.props;
     const { title, cover_img, name, id, read_status } = book;
     return (
