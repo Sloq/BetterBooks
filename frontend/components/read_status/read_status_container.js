@@ -10,7 +10,7 @@ import { shelfNameArray } from '../../reducers/selectors';
 const mapStateToProps = (state) => ({
   state: state,
   shelfNames: state.bookshelves.shelfNames,
-  currentUserId: state.session.currentUser.id,
+  currentUser: state.session.currentUser,
   readStatus: state.shelvings.currentBook.read_status,
   shelvesIn: state.shelvings.currentBook.inShelves
 });

@@ -21,7 +21,7 @@ class Navbar extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className='nav-panel'>
-          <Link to={`/user/${currentUser.id}/bookshelf`}>
+          <Link to={`/user/${currentUser.id}/bookshelf/all`}>
             My Books
           </Link>
         </div>
@@ -39,23 +39,23 @@ class Navbar extends React.Component {
   //   );
   // }
 
-  searchBar() {
-    return (
-      <div className="searchbar-div">
-
-        <input className='nav-search' type="text" name="search" placeholder="Search..."/>
-      </div>
-    );
-  }
+  // searchBar() {
+  //   return (
+  //     <div className="searchbar-div">
+  //
+  //       <input className='nav-search' type="text" name="search" placeholder="Search..."/>
+  //     </div>
+  //   );
+  // }
+  // <Link to={`/user/${currentUser.id}`}>
+  // </Link>
 
   userIconOrLogin() {
     const currentUser = this.props.currentUser;
     if (currentUser) {
       return (
         <div>
-          <Link to={`/user/${currentUser.id}`}>
             <img className='user-nav-icon' src={currentUser.profile_pic} alt="user profile pic"/>
-          </Link>
         </div>
       );
     } else {
@@ -85,8 +85,8 @@ class Navbar extends React.Component {
     }
   }
 
+  // {this.searchBar()}
   render() {
-    console.log(this.props);
     return (
       <nav className='main-nav'>
         <div className='left-navbar'>
@@ -97,7 +97,6 @@ class Navbar extends React.Component {
           {this.bookshelfElement()}
         </div>
         <div className='right-navbar'>
-          {this.searchBar()}
           {this.userIconOrLogin()}
           {this.signOutOrSignUp()}
         </div>

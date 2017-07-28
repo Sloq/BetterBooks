@@ -6,8 +6,8 @@ import { shelfNameArray } from '../../reducers/selectors';
 
 
 const mapStateToProps = (state) => ({
-  shelfNames: shelfNameArray(state.bookshelves.shelfNames),
-  currentUserId: state.session.currentUser.id
+  shelfNames: state.bookshelves.shelfNames,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

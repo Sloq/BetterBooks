@@ -6,26 +6,26 @@ class BookshelfBook extends React.Component {
     super(props);
   }
 
+  // <Link to={`/authors/${name}/`}>
+  // </Link>
   render() {
     const { book } = this.props;
-    const { title, cover_img, name, read_status, book_id } = book;
+    const { title, cover_img, name, read_status, id } = book[1];
     return (
-      <li key={book.id} className="bookshelf-li">
+      <li key={book[0]} className="bookshelf-li">
         <ul className="bookshelf-entry">
           <li>
-            <Link to={`/books/${book_id}/`}>
+            <Link to={`/books/${id}/`}>
               <img className='bookshelf-pic' src={cover_img} alt={title}/>
             </Link>
           </li>
           <li>
-            <Link to={`/books/${book_id}/`}>
+            <Link to={`/books/${id}/`}>
               {title}
             </Link>
           </li>
           <li>
-            <Link to={`/authors/${name}/`}>
               {name}
-            </Link>
           </li>
         </ul>
       </li>

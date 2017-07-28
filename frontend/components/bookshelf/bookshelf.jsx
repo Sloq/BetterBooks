@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import BookshelfBook from './bookshelf_book';
+import BookshelfBook from './bookshelf_defaults_book';
+import NamedShelfBook from './named_bookshelf_book';
+import BookshelfSideContainer from '../bookshelf_side_nav/bookshelf_side_container';
 // import BookshelfSidebar from './bookshelf_sidebar';
 
 class Bookshelf extends React.Component {
@@ -9,44 +11,62 @@ class Bookshelf extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match.params);
-    // this.props.requestNamedBookshelf(this.props.match.params.shelfName
-    // , this.props.match.params.userId);
-    this.props.requestShelvings(this.props.match.params.user_id, "ALL");
+    this.props.requestShelvings(this.props.match.params.user_id, this.props.match.params.shelf_name);
+    console.log(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.userId !== nextProps.match.params.userId) {
-      this.props.requestShelvings(nextProps.match.params.userId);
+    const oldUser = this.props.match.params.user_id;
+    const newUser = nextProps.match.params.user_id;
+    const oldShelfName = this.props.match.params.shelf_name;
+    const newShelfName = nextProps.match.params.shelf_name;
+    if (oldUser !== newUser) {
+      this.props.requestShelvings(newUser, newShelfName);
+    }
+    if (oldShelfName !== newShelfName) {
+      if (["all", "read", "want_to_read", "currently_reading"].includes(newShelfName)) {
+        this.props.requestShelvings(newUser, newShelfName);
+      } else {
+        this.props.requestNamedBookshelf(newShelfName, newUser);
+      }
     }
   }
 
   userBooksUL() {
-    console.log("fuuuuuu");
-    console.log(this.props.shelvings);
-    const books = this.props.shelvings;
-    if (books[0]) {
-      return books.map(book =>
-        <BookshelfBook
-          book={book}
-        />
-      );
+    let books;
+    if (["all", "read", "want_to_read", "currently_reading"].includes(this.props.match.params.shelf_name)) {
+      books = this.props.shelvings;
+      if (books[0]) {
+        return books.map(book =>
+          <BookshelfBook
+            book={book}
+          />
+        );
+      }
     } else {
-      return (<div></div>);
+      books = this.props.viewingShelf;
+      if (Object.keys(books).length !== 0) {
+        return Object.keys(books).map(id =>
+          <NamedShelfBook
+            deleteShelving={this.props.deleteShelving}
+            shelfId={id}
+            book={books[id]}
+            shelfName={this.props.match.params.shelf_name}
+            userId={this.props.match.params.user_id}
+          />
+        );
+      } else {
+        return (<div></div>);
+      }
     }
   }
 
-  // <BookshelfSidebar className="bookshelves-sidebar" types={this.props.types} userId={userId}/>
-
   render() {
-    // console.log(this.props.match.params.userId);
-    // console.log("allprops-vv");
-    // console.log(this.props);
-    // console.log("allprops-^^");
-    const userId = this.props.match.params.userId;
+    const user_id = this.props.match.params.user_id;
     return (
-      <div className="user_books">
-        <ul className="users-all-bookshelf">
+      <div className="user_bookshelf">
+        <BookshelfSideContainer match={this.props.match}/>
+        <ul className="users-own-bookshelves">
           {this.userBooksUL()}
         </ul>
       </div>

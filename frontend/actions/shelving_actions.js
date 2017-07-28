@@ -2,7 +2,6 @@ import * as APIUtil from '../util/shelvings_api_util';
 
 export const RECEIVE_SHELVINGS = "RECEIVE_SHELVINGS";
 export const RECEIVE_BOOK_SHELVING = "RECEIVE_BOOK_SHELVING";
-// export const REMOVE_BOOKSHELF = "REMOVE_BOOKSHELF";
 
 export const receiveShelvings = shelvings => ({
   type: RECEIVE_SHELVINGS,
@@ -16,7 +15,8 @@ export const receiveBookShelving = newShelving => ({
 
 export const requestShelvings = (userId, readStatus) => dispatch => {
   APIUtil.fetchShelvings(userId, readStatus).
-  then(shelvings => dispatch(receiveShelvings(shelvings)));
+  then(shelvings =>
+    dispatch(receiveShelvings(shelvings)));
 };
 
 export const requestBookShelving = (bookId) => dispatch => {

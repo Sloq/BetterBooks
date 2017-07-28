@@ -17,3 +17,9 @@ export const shelfNameArray = (shelves) => (
     obj.shelfName
   ))
 ).filter(shelf => shelf !== "Default");
+
+export const shelvingsArray = (shelvings) => (
+  Object.keys(shelvings).map(id =>
+    [id, shelvings[id]]
+  )
+);

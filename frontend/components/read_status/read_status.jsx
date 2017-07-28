@@ -17,8 +17,10 @@ class ReadStatus extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestBookShelving(this.props.match.params.BookId);
-    this.props.requestAllBookshelves(this.props.currentUserId);
+    if (this.props.currentUser) {
+      this.props.requestBookShelving(this.props.match.params.BookId);
+      this.props.requestAllBookshelves(this.props.currentUser.id);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -97,7 +99,7 @@ class ReadStatus extends React.Component {
     // let difference = this.props.shelfNames.filter(x => this.props.shelvesIn.indexOf(x) === -1);
     return (
       this.props.shelfNames.map(name => (
-        <option value={Object.keys(name)[0]}>{Object.values(name)[0]}</option>
+        <option key={Object.keys(name)[0]} value={Object.keys(name)[0]}>{Object.values(name)[0]}</option>
       ))
     );
   }
@@ -118,7 +120,7 @@ class ReadStatus extends React.Component {
   }
 
   render() {
-    console.log(this.props.state);
+    if (this.props.currentUser) {
     return (
       <div className="read-status-book-show">
         {this.props.readStatus}
@@ -137,6 +139,13 @@ class ReadStatus extends React.Component {
 
       </div>
     );
+  } else {
+    return (
+      <div className="read-status-book-show">
+        Login or sign up to start tracking your books!
+      </div>
+    );
+  }
   }
 }
 

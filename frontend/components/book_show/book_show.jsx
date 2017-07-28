@@ -18,7 +18,6 @@ class BookShow extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="book-show-component">
         <img className="book-show-cover" src={this.props.book.cover_img} alt={this.props.book.title}/>

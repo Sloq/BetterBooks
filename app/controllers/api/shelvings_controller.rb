@@ -9,12 +9,18 @@ class Api::ShelvingsController < ApplicationController
     # use index because we have to look through everything and filter it isnt a particular row
     #
     user = User.find_by(id: params[:userId])
-    shelvings = user.shelvings.select('distinct on (book_id) *')
-    if params[:readStatus] == "Read" || params[:readStatus] == "Want to Read" || params[:readStatus] == "Currently Reading"
-      @shelvings = shelvings.where(read_status: params[:readStatus])
+    current_shelvings = user.shelvings
+    if params[:readStatus] == "read"
+      @shelvings = current_shelvings.select('distinct on (book_id) *').where(read_status: "Read")
+    elsif params[:readStatus] == "want_to_read"
+      @shelvings = current_shelvings.select('distinct on (book_id) *').where(read_status: "Want to Read")
+    elsif params[:readStatus] == "currently_reading"
+      @shelvings = current_shelvings.select('distinct on (book_id) *').where(read_status: "Currently Reading")
     else
+      shelvings = current_shelvings.select('distinct on (book_id) *')
       @shelvings = shelvings
     end
+    p @shelvings
   end
 
   def create
@@ -42,15 +48,10 @@ class Api::ShelvingsController < ApplicationController
   def destroy
     shelving = current_user.shelvings.find_by(id: params[:id])
     shelving.destroy!
-    @shelving = current_user.shelvings.select(:book_id).distinct
-    render "/api/shelvings/index"
+    render json: {}
   end
 
   def update
-    puts "============================================"
-    puts current_user
-    puts current_user.shelvings
-    puts current_user.shelvings.where(book_id: params[:book_id])
     shelvings_to_update = current_user.shelvings.where(book_id: params[:book_id])
     shelvings_to_update.update_all(read_status: params[:read_status])
     @shelvings = shelvings_to_update

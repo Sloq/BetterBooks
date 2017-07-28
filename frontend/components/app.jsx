@@ -16,7 +16,7 @@ const App = () => (
     <NavbarContainer/>
     <Route exact path='/' component={BookIndexContainer}/>
     <Route exact path='/books/:BookId' component={BookShowContainer}/>
-    <Route exact path='/user/:user_id/bookshelf' component={BookshelfContainer}/>
+    <Route exact path='/user/:user_id/bookshelf/:shelf_name' component={BookshelfContainer}/>
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>
