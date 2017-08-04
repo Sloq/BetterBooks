@@ -53,21 +53,21 @@ marcoPolo = Author.create!(name: "Marco Polo")
 
 charlesBukowski = Author.create!(name: "Charles Bukowski")
 
-user = User.create!(username: "Odin", password: "123456", profile_pic: "http://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hehehe@yahoo.com")
+user = User.create!(username: "Odin", password: "123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hehehe@yahoo.com")
 
-user2 = User.create!(username: "Thor", password: "123456", profile_pic: "http://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hohoho@yahoo.com")
+user2 = User.create!(username: "Thor", password: "123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hohoho@yahoo.com")
 
-user3 = User.create!(username: "AsheKetchum", password: "123456", profile_pic: "http://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hihihi@yahoo.com")
+user3 = User.create!(username: "AsheKetchum", password: "123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hihihi@yahoo.com")
 
-user4 = User.create!(username: "Bailey", password: "batman", profile_pic: "http://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hidfhihi@yahoo.com")
+user4 = User.create!(username: "Bailey", password: "batman", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hidfhihi@yahoo.com")
 
-guest = User.create!(username: "Guest", password: "guest123456", profile_pic: "http://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "guest@guestlogin.com")
+guest = User.create!(username: "Guest", password: "guest123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "guest@guestlogin.com")
 
 book1 = Book.create!(title: "Slaughterhouse-Five", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609657/BetterBooks/covers/slaughter-house-five.jpg", blurb: "Kurt Vonnegut's absurdist classic Slaughterhouse-Five introduces us to Billy Pilgrim, a man who becomes unstuck in time after he is abducted by aliens from the planet Tralfamadore. In a plot-scrambling display of virtuosity, we follow Pilgrim simultaneously through all phases of his life, concentrating on his (and Vonnegut's) shattering experience as an American prisoner of war who witnesses the firebombing of Dresden.", author_id: author2.id)
 
 book2 = Book.create!(title: "Survivor", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609658/BetterBooks/covers/survivor.jpg", blurb: "Tender Branson—last surviving member of the Creedish Death Cult—is dictating his life story into Flight 2039’s recorder. He is all alone in the airplane, which will crash shortly into the vast Australian outback. But before it does, he will unfold the tale of his journey.", author_id: author1.id)
 
-book3 = Book.create!(title: "Dharma Bums", cover_img: "http://res.cloudinary.com/cloudmccloud/image/upload/v1500609658/BetterBooks/covers/the_dharma_bums.jpg", blurb: "Two ebullient young men search for Truth the Zen way: from marathon wine-drinking bouts, poetry jam sessions, and 'yabyum' in San Francisco's Bohemia to solitude in the high Sierras and a vigil atop Desolation Peak in Washington State. Published just a year after On the Road put the Beat Generation on the map, The Dharma Bums is sparked by Kerouac's expansiveness, humor, and a contagious zest for life.", author_id: author3.id)
+book3 = Book.create!(title: "Dharma Bums", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609658/BetterBooks/covers/the_dharma_bums.jpg", blurb: "Two ebullient young men search for Truth the Zen way: from marathon wine-drinking bouts, poetry jam sessions, and 'yabyum' in San Francisco's Bohemia to solitude in the high Sierras and a vigil atop Desolation Peak in Washington State. Published just a year after On the Road put the Beat Generation on the map, The Dharma Bums is sparked by Kerouac's expansiveness, humor, and a contagious zest for life.", author_id: author3.id)
 
 book4 = Book.create!(title: "The Pale King", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609659/BetterBooks/covers/the-pale-king.jpg", blurb: "The agents at the IRS Regional Examination Center in Peoria, Illinois, appear ordinary enough to newly arrived trainee David Foster Wallace. But as he immerses himself in a routine so tedious and repetitive that new employees receive boredom-survival training, he learns of the extraordinary variety of personalities drawn to this strange calling.", author_id: author4.id)
 

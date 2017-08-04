@@ -59,7 +59,7 @@ class ReadStatus extends React.Component {
       return (
         <form className="status-form"   >
           <select name="readStatus" onChange={this.updateStatus}>
-            <option selected disabled>Choose Read Status</option>
+            <option selected="selected" disabled>Choose Read Status</option>
             <option value="Read" >Read</option>
             <option value="Currently Reading">Currently Reading</option>
             <option value="Want to Read">Want to Read</option>
@@ -86,7 +86,7 @@ class ReadStatus extends React.Component {
     if (this.props.shelvesIn) {
     return (
       this.props.shelvesIn.map(shelf => (
-        <li key={shelf}>{shelf}</li>
+        <li key={"shelf" + shelf}>{shelf}</li>
       ))
     );} else {
       return (
@@ -97,9 +97,9 @@ class ReadStatus extends React.Component {
 
   shelfDropOptions() {
     return (
-      this.props.shelfNames.map(name => (
-        <option key={Object.keys(name)[0]} value={Object.keys(name)[0]}>{Object.values(name)[0]}</option>
-      ))
+      this.props.shelfNames.map((name, idx) => {
+      return <option key={Object.keys(name)[0] + idx} value={Object.keys(name)[0]}>{Object.values(name)[0]}</option>;
+      })
     );
   }
 

@@ -10,7 +10,7 @@ class Navbar extends React.Component {
     return (
       <div>
         <Link to={`/`}>
-          <img className='nav-logo' src="http://res.cloudinary.com/cloudmccloud/image/upload/v1500498258/BetterBooks/koala_kygmbi.png" alt="Well Read Koala"/>
+          <img className='nav-logo' src="https://res.cloudinary.com/cloudmccloud/image/upload/v1500498258/BetterBooks/koala_kygmbi.png" alt="Well Read Koala"/>
         </Link>
       </div>
     );

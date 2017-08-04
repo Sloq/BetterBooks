@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
       username: '',
       password: '',
       email: '',
-      profile_pic: "http://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png"
+      profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -99,7 +99,7 @@ class SessionForm extends React.Component {
         <div className="login-form-container">
 
           <div className='pic-div'>
-            <img src="http://res.cloudinary.com/cloudmccloud/image/upload/v1500498258/BetterBooks/koala_kygmbi.png" alt="Koala Mascot"/>
+            <img src="https://res.cloudinary.com/cloudmccloud/image/upload/v1500498258/BetterBooks/koala_kygmbi.png" alt="Koala Mascot"/>
           </div>
 
           {this.loginHeader()}
