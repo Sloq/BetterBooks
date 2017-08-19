@@ -2,11 +2,11 @@
 
 [BetterBooks live](https://betterbooks.herokuapp.com/)
 
-BetterBooks is a web-app inspired by [Goodreads](https://www.goodreads.com/) that allows users to track which books they have read and organize them into bookshelves. It is a full-stack, single page web application that was built using Ruby on Rails a PostGreSQL database, and React/Redux.
+BetterBooks is a web-app inspired by [Goodreads](https://www.goodreads.com/) that allows users to track which books they have read and organize them into bookshelves. It is a full-stack, single page web application that was built using Ruby on Rails a PostgreSQL database, and React/Redux.
 
 ## Technologies
 
-BetterBooks uses Rails on the back-end. Rails is a MVC that we use to fetch data from our PostGreSQL database and forward our JSON data to the front end. For cleaner formatting I've used jQuery in implementing AJAX requests.
+BetterBooks uses Rails on the back-end. Rails is a MVC that we use to fetch data from our PostGreSQL database and forward our JSON data to the front end.
 
 The front end is written in JavaScript and implemented using the React library. Redux is also used so the app utilizes a unidirectional flow of data for altering its state and triggering rendering.
 
