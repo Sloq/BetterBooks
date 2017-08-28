@@ -89,6 +89,13 @@
   font-weight: 600;
 }
 
+.bookshelf-nav .activeShelf {
+  color: #d75700;
+  // text-decoration: underline black;
+  font-size: 31px;
+  font-weight: 600;
+}
+
 .user_bookshelf {
   display: flex;
   justify-content: flex-start;

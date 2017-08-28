@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 class ReadStatus extends React.Component {
@@ -34,6 +35,7 @@ class ReadStatus extends React.Component {
   }
 
   updateShelfStatus(e) {
+    console.log(e.target)
     this.setState({shelf: e.target.value});
   }
 
@@ -50,7 +52,7 @@ class ReadStatus extends React.Component {
 
   addToShelf(e) {
     e.preventDefault();
-    // const post = Object.assign({}, this.state);
+    // const post = Object.assign({}, this.state); 
     this.props.createShelving(this.props.match.params.BookId, this.state.shelf, this.props.readStatus);
   }
 
@@ -58,8 +60,8 @@ class ReadStatus extends React.Component {
     if (this.props.readStatus) {
       return (
         <form className="status-form"   >
-          <select name="readStatus" onChange={this.updateStatus}>
-            <option selected="selected" disabled>Choose Read Status</option>
+          <select name="readStatus" onChange={this.updateStatus} defaultValue="selected">
+            <option value="selected" disabled>Choose Read Status</option>
             <option value="Read" >Read</option>
             <option value="Currently Reading">Currently Reading</option>
             <option value="Want to Read">Want to Read</option>
@@ -70,8 +72,8 @@ class ReadStatus extends React.Component {
     } else {
       return (
         <form className="status-form"   >
-          <select name="readStatus" onChange={this.updateStatus}>
-            <option selected disabled>Choose Read Status</option>
+          <select name="readStatus" onChange={this.updateStatus} defaultValue="selected">
+            <option value="selected" disabled>Choose Read Status</option>
             <option value="Read" >Read</option>
             <option value="Currently Reading">Currently Reading</option>
             <option value="Want to Read">Want to Read</option>
@@ -83,11 +85,18 @@ class ReadStatus extends React.Component {
   }
 
   currentShelves() {
-    if (this.props.shelvesIn) {
-    return (
-      this.props.shelvesIn.map(shelf => (
-        <li key={"shelf" + shelf}>{shelf}</li>
-      ))
+    if (this.props.shelvesIn && this.props.shelvesIn.length > 1) {
+      const inShelves = this.props.shelvesIn.filter(shelf => {
+        return shelf != "Default"
+        })
+      return (
+        inShelves.map(shelf => (
+          <li key={"shelf" + shelf}>
+            <Link to={`/user/${this.props.currentUser.id}/bookshelf/${shelf}`} className="show-shelf-link">
+              {shelf}
+            </Link>
+          </li>
+        ))
     );} else {
       return (
         <li></li>
@@ -96,18 +105,27 @@ class ReadStatus extends React.Component {
   }
 
   shelfDropOptions() {
-    return (
-      this.props.shelfNames.map((name, idx) => {
-      return <option key={Object.keys(name)[0] + idx} value={Object.keys(name)[0]}>{Object.values(name)[0]}</option>;
-      })
-    );
+    const namedShelves = this.props.shelfNames.filter(shelf => {
+      return shelf.shelfName != "Default"
+    })
+    if (namedShelves) {
+      return (
+        namedShelves.map((name, idx) => {
+        return <option key={name.shelfName + idx} value={name.shelfId}>{name.shelfName}</option>;
+        })
+      );
+    }
+    else {
+      return <option disabled key={empty1} value={"No Current Bookshelves"}>No Current Bookshelves</option>;
+    }
   }
 
   addToShelfDropdown() {
     if (this.props.readStatus) {
       return (
         <form className="status-form"   >
-          <select name="readStatus" onChange={this.updateShelfStatus}>
+          <select name="readStatus" onChange={this.updateShelfStatus} defaultValue="default">
+            <option disabled key={"default1"} value={"default"}>Choose a Shelf</option>
             {this.shelfDropOptions()}
           </select>
           <button onClick={ this.addToShelf }>Add to Shelf</button>

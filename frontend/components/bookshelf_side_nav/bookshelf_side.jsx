@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import CreateShelf from './create_shelf';
 
@@ -27,9 +28,9 @@ class BookshelfSide extends React.Component {
           return;
         }
         newShelfArray.push(<li key={shelf.shelfId}>
-          <Link to={`/user/${id}/bookshelf/${shelf.shelfName}`}>
+          <NavLink to={`/user/${id}/bookshelf/${shelf.shelfName}`} activeClassName="activeShelf">
             {shelf.shelfName}
-          </Link>
+          </NavLink>
         </li>);
       }
     );
@@ -60,18 +61,18 @@ class BookshelfSide extends React.Component {
       <div className="bookshelf-nav">
         <h2>Bookshelves</h2>
         <ul className="default-shelves">
-          <Link to={`/user/${id}/bookshelf/all`} >
+          <NavLink to={`/user/${id}/bookshelf/all`} activeClassName="activeShelf">
             All
-          </Link>
-          <Link to={`/user/${id}/bookshelf/read`} activeStyle={{ color: 'red' }}>
+          </NavLink>
+          <NavLink to={`/user/${id}/bookshelf/read`} activeClassName="activeShelf">
             Read
-          </Link>
-          <Link to={`/user/${id}/bookshelf/currently_reading`} >
+          </NavLink>
+          <NavLink to={`/user/${id}/bookshelf/currently_reading`} activeClassName="activeShelf">
             Currently Reading
-          </Link>
-          <Link to={`/user/${id}/bookshelf/want_to_read`} >
+          </NavLink>
+          <NavLink to={`/user/${id}/bookshelf/want_to_read`} activeClassName="activeShelf">
             Want to Read
-          </Link>
+          </NavLink>
         </ul>
         <ul className="user-created-shelves">
           {this.shelvesUl()}

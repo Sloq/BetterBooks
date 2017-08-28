@@ -10,7 +10,15 @@ class Bookshelf extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestShelvings(this.props.match.params.user_id, this.props.match.params.shelf_name);
+    console.log("componentDidMount")
+    console.log(this.props)
+    console.log(this.props.match.params.shelf_name)
+    if (["all", "read", "want_to_read", "currently_reading"].includes(this.props.match.params.shelf_name)) {
+        this.props.requestShelvings(this.props.match.params.user_id, this.props.match.params.shelf_name);
+    } else {
+        console.log("in else statement")
+        this.props.requestNamedBookshelf(this.props.match.params.shelf_name, this.props.match.params.user_id);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -21,10 +29,13 @@ class Bookshelf extends React.Component {
     if (oldUser !== newUser) {
       this.props.requestShelvings(newUser, newShelfName);
     }
-    if (oldShelfName !== newShelfName) {
+    else if (newShelfName !== oldShelfName) {
       if (["all", "read", "want_to_read", "currently_reading"].includes(newShelfName)) {
         this.props.requestShelvings(newUser, newShelfName);
       } else {
+        console.log("in receive props else")
+        console.log(newShelfName)
+        console.log(newUser)
         this.props.requestNamedBookshelf(newShelfName, newUser);
       }
     }
