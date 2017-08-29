@@ -7,6 +7,7 @@ import CreateShelf from './create_shelf';
 class BookshelfSide extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
@@ -17,7 +18,17 @@ class BookshelfSide extends React.Component {
     if (this.props.match.params.user_id !== nextProps.match.params.user_id) {
       this.props.requestAllBookshelves(nextProps.match.params.user_id);
     }
+    if (this.props.shelfNames.length !== nextProps.shelfNames.length) {
+      this.props.requestAllBookshelves(nextProps.match.params.user_id);
+    }
   }
+
+  handleDelete(shelfName) {
+    this.props.deleteBookshelf(shelfName, this.props.currentUser)
+    // if (this.props.match.params.shelf_name === shelfName) {
+    // }
+  }
+
   shelvesUl() {
     const id = this.props.match.params.user_id;
     const shelfies = this.props.shelfNames;
@@ -27,10 +38,12 @@ class BookshelfSide extends React.Component {
         if (shelf.shelfName === "Default") {
           return;
         }
-        newShelfArray.push(<li key={shelf.shelfId}>
+        newShelfArray.push(<li key={shelf.shelfId} className="personal-shelf-li">
           <NavLink to={`/user/${id}/bookshelf/${shelf.shelfName}`} activeClassName="activeShelf">
             {shelf.shelfName}
           </NavLink>
+          
+          <button className="remove-shelve" onClick ={() => this.handleDelete(shelf.shelfName)}><i className="fa fa-trash-o" aria-hidden="true"></i></button>
         </li>);
       }
     );
@@ -53,7 +66,6 @@ class BookshelfSide extends React.Component {
       );
     }
   }
-
 
   render() {
     const id = this.props.match.params.user_id;
