@@ -54,10 +54,10 @@ Associations between the user, the users bookshelves, and the the users books(ca
 BetterBooks was designed and implemented over the course of 10 days. The original [proposal](https://github.com/Sloq/Full_Stack_Project/tree/master/docs) covers MVP features, timeline, and other documentation.
 
 ## Future Improvements
-### Add reviews to books
-Users need to be able to add reviews to books, the rating will show the reviewers information, the review, and a star rating of the book. The overall rating will be tracked to display an average score.
 ### Search function to look up books
 Currently users must click on a book to access it and add it to there library. A search feature would allow users to more easily find a book(or find information from book descriptions) and add it to there library.
+### Add average rating to books
+Provide an average rating for each book.
 ### Add user profiles
 Allow users to view their own profile and view the profiles and bookshelves of other users.
 ### Add author pages
