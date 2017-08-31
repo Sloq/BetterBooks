@@ -8,8 +8,9 @@ class NamedShelfBook extends React.Component {
   }
 
   removeBook() {
-    this.props.deleteShelving(this.props.book.id, this.props.shelfId);
-    // this.props.requestNamedBookshelf(this.props.userId, this.prop.shelfName);
+    this.props.deleteShelving(this.props.book.id, this.props.shelfId)
+    // .then(() => this.props.requestNamedBookshelf(this.props.shelfName, this.props.userId))
+    // setTimeout(() => this.props.requestNamedBookshelf(this.props.shelfName, this.props.userId), 100)
   }
 
   render() {

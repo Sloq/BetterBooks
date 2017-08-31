@@ -1,2 +1,5 @@
-json.extract! review.user, :username
-json.extract! review, :rating, :body
+@reviews.map do |review|
+  json.set! review.id do
+    json.partial! 'review', review: review
+  end
+end

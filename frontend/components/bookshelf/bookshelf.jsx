@@ -25,14 +25,21 @@ class Bookshelf extends React.Component {
     if (oldUser !== newUser) {
       this.props.requestShelvings(newUser, newShelfName);
     }
-    else if (newShelfName !== oldShelfName) {
+    if (newShelfName !== oldShelfName) {
       if (["all", "read", "want_to_read", "currently_reading"].includes(newShelfName)) {
         this.props.requestShelvings(newUser, newShelfName);
       } else {
         this.props.requestNamedBookshelf(newShelfName, newUser);
       }
     }
+    if (Object.keys(this.props.viewingShelf).length !== Object.keys(nextProps.viewingShelf).length) {
+      this.props.requestNamedBookshelf(newShelfName, newUser);
+    }
   }
+
+  // removeBook(bookId, shelfId) {
+  //   this.props.deleteShelving(bookId, shelfId);
+  // }
 
   userBooksUL() {
     let books;
@@ -49,14 +56,16 @@ class Bookshelf extends React.Component {
     } else {
       books = this.props.viewingShelf;
       if (Object.keys(books).length !== 0) {
-        return Object.keys(books).map(id =>
+        return Object.keys(books).map(shelfId =>
           <NamedShelfBook
+            requestNamedBookshelf={this.props.requestNamedBookshelf}
             deleteShelving={this.props.deleteShelving}
-            shelfId={id}
-            book={books[id]}
+            shelfId={shelfId}
+            book={books[shelfId]}
             shelfName={this.props.match.params.shelf_name}
             userId={this.props.match.params.user_id}
-            key={id}
+            shelfBookCount={this.props.viewingShelf}
+            key={shelfId}
           />
         );
       } else {

@@ -53,25 +53,29 @@ marcoPolo = Author.create!(name: "Marco Polo")
 
 charlesBukowski = Author.create!(name: "Charles Bukowski")
 
-user = User.create!(username: "Odin", password: "123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hehehe@yahoo.com")
+odin = User.create!(username: "Odin", password: "123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1504041771/BetterBooks/odin.jpg", email: "hehehe@yahoo.com")
 
-user2 = User.create!(username: "Thor", password: "123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hohoho@yahoo.com")
+thor = User.create!(username: "Thor", password: "123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1504042163/BetterBooks/thor.jpg", email: "hohoho@yahoo.com")
 
-user3 = User.create!(username: "AsheKetchum", password: "123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hihihi@yahoo.com")
+suttungr = User.create!(username: "Suttungr", password: "123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1504041771/BetterBooks/Suttungr.jpg", email: "hihihi@yahoo.com")
 
-user4 = User.create!(username: "Bailey", password: "batman", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "hidfhihi@yahoo.com")
+loki = User.create!(username: "Loki", password: "batman", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1504041771/BetterBooks/loki.png", email: "hidfhihi@yahoo.com")
+
+baldur = User.create!(username: "Baldur", password: "batman", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1504041772/BetterBooks/baldur.jpg", email: "hidfhihi@yahoo.com")
+
+anansi = User.create!(username: "Anansi", password: "batman", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1504041772/BetterBooks/anansi.jpg", email: "hidfhihi@yahoo.com")
 
 guest = User.create!(username: "Guest", password: "guest123456", profile_pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500498267/BetterBooks/003-book-2_iefo3g.png", email: "guest@guestlogin.com")
 
-book1 = Book.create!(title: "Slaughterhouse-Five", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609657/BetterBooks/covers/slaughter-house-five.jpg", blurb: "Kurt Vonnegut's absurdist classic Slaughterhouse-Five introduces us to Billy Pilgrim, a man who becomes unstuck in time after he is abducted by aliens from the planet Tralfamadore. In a plot-scrambling display of virtuosity, we follow Pilgrim simultaneously through all phases of his life, concentrating on his (and Vonnegut's) shattering experience as an American prisoner of war who witnesses the firebombing of Dresden.", author_id: author2.id)
+slaughterhouseFive = Book.create!(title: "Slaughterhouse-Five", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609657/BetterBooks/covers/slaughter-house-five.jpg", blurb: "Kurt Vonnegut's absurdist classic Slaughterhouse-Five introduces us to Billy Pilgrim, a man who becomes unstuck in time after he is abducted by aliens from the planet Tralfamadore. In a plot-scrambling display of virtuosity, we follow Pilgrim simultaneously through all phases of his life, concentrating on his (and Vonnegut's) shattering experience as an American prisoner of war who witnesses the firebombing of Dresden.", author_id: author2.id)
 
-book2 = Book.create!(title: "Survivor", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609658/BetterBooks/covers/survivor.jpg", blurb: "Tender Branson—last surviving member of the Creedish Death Cult—is dictating his life story into Flight 2039’s recorder. He is all alone in the airplane, which will crash shortly into the vast Australian outback. But before it does, he will unfold the tale of his journey.", author_id: author1.id)
+survivor = Book.create!(title: "Survivor", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609658/BetterBooks/covers/survivor.jpg", blurb: "Tender Branson—last surviving member of the Creedish Death Cult—is dictating his life story into Flight 2039’s recorder. He is all alone in the airplane, which will crash shortly into the vast Australian outback. But before it does, he will unfold the tale of his journey.", author_id: author1.id)
 
-book3 = Book.create!(title: "Dharma Bums", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609658/BetterBooks/covers/the_dharma_bums.jpg", blurb: "Two ebullient young men search for Truth the Zen way: from marathon wine-drinking bouts, poetry jam sessions, and 'yabyum' in San Francisco's Bohemia to solitude in the high Sierras and a vigil atop Desolation Peak in Washington State. Published just a year after On the Road put the Beat Generation on the map, The Dharma Bums is sparked by Kerouac's expansiveness, humor, and a contagious zest for life.", author_id: author3.id)
+dharmaBums = Book.create!(title: "Dharma Bums", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609658/BetterBooks/covers/the_dharma_bums.jpg", blurb: "Two ebullient young men search for Truth the Zen way: from marathon wine-drinking bouts, poetry jam sessions, and 'yabyum' in San Francisco's Bohemia to solitude in the high Sierras and a vigil atop Desolation Peak in Washington State. Published just a year after On the Road put the Beat Generation on the map, The Dharma Bums is sparked by Kerouac's expansiveness, humor, and a contagious zest for life.", author_id: author3.id)
 
-book4 = Book.create!(title: "The Pale King", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609659/BetterBooks/covers/the-pale-king.jpg", blurb: "The agents at the IRS Regional Examination Center in Peoria, Illinois, appear ordinary enough to newly arrived trainee David Foster Wallace. But as he immerses himself in a routine so tedious and repetitive that new employees receive boredom-survival training, he learns of the extraordinary variety of personalities drawn to this strange calling.", author_id: author4.id)
+thePaleKing = Book.create!(title: "The Pale King", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609659/BetterBooks/covers/the-pale-king.jpg", blurb: "The agents at the IRS Regional Examination Center in Peoria, Illinois, appear ordinary enough to newly arrived trainee David Foster Wallace. But as he immerses himself in a routine so tedious and repetitive that new employees receive boredom-survival training, he learns of the extraordinary variety of personalities drawn to this strange calling.", author_id: author4.id)
 
-book5 = Book.create!(title: "Romeo and Juliet", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609657/BetterBooks/covers/Romeo_and_Juliet.jpg", blurb: "In Romeo and Juliet, Shakespeare creates a world of violence and generational conflict in which two young people fall in love and die because of that love. The story is rather extraordinary in that the normal problems faced by young lovers are here so very large. It is not simply that the families of Romeo and Juliet disapprove of the lover's affection for each other; rather, the Montagues and the Capulets are on opposite sides in a blood feud and are trying to kill each other on the streets of Verona.", author_id: author5.id)
+romeoAndJuliet = Book.create!(title: "Romeo and Juliet", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609657/BetterBooks/covers/Romeo_and_Juliet.jpg", blurb: "In Romeo and Juliet, Shakespeare creates a world of violence and generational conflict in which two young people fall in love and die because of that love. The story is rather extraordinary in that the normal problems faced by young lovers are here so very large. It is not simply that the families of Romeo and Juliet disapprove of the lover's affection for each other; rather, the Montagues and the Capulets are on opposite sides in a blood feud and are trying to kill each other on the streets of Verona.", author_id: author5.id)
 
 reasonForFlowers = Book.create!(title: "Reason For Flowers, The", cover_img: "https://res.cloudinary.com/cloudmccloud/image/upload/v1500609657/BetterBooks/covers/Reason-for-Flowers.jpg", blurb: "Flowers, and the fruits that follow, feed, clothe, sustain, and inspire all humanity. They have done so since before recorded history. Flowers are used to celebrate all-important occasions, to express love, and are also the basis of global industries. Americans buy ten million flowers a day and perfumes are a worldwide industry worth $30 billion dollars annually. Yet, we know little about flowers, their origins, bizarre sex lives, or how humans relate and depend upon them.", author_id: reasonflowersAuth.id)
 
@@ -116,47 +120,65 @@ bookshelf3 = Bookshelf.create!(user_id: guest.id, shelf_name: "fun")
 
 bookshelf4 = Bookshelf.create!(user_id: guest.id, shelf_name: "boring")
 
-bookshelf5 = Bookshelf.create!(user_id: user.id, shelf_name: "favorites")
+bookshelf5 = Bookshelf.create!(user_id: odin.id, shelf_name: "favorites")
 
 bookshelf5 = Bookshelf.create!(user_id: guest.id, shelf_name: "Default")
 
-bookshelf6 = Bookshelf.create!(user_id: user2.id, shelf_name: "funny")
+bookshelf6 = Bookshelf.create!(user_id: thor.id, shelf_name: "funny")
 
-bookshelf7 = Bookshelf.create!(user_id: user3.id, shelf_name: "dramatic")
+bookshelf7 = Bookshelf.create!(user_id: suttungr.id, shelf_name: "dramatic")
 
-bookshelf8 = Bookshelf.create!(user_id: user3.id, shelf_name: "favorites")
+bookshelf8 = Bookshelf.create!(user_id: suttungr.id, shelf_name: "favorites")
 
-bookshelf9 = Bookshelf.create!(user_id: user2.id, shelf_name: "not good")
+bookshelf9 = Bookshelf.create!(user_id: thor.id, shelf_name: "not good")
 
 shelvingGuest1 = Shelving.create!(
-  bookshelf_id: bookshelf1.id, book_id: book1.id, read_status: "Read"
+  bookshelf_id: bookshelf1.id, book_id: slaughterhouseFive.id, read_status: "Read"
 )
 shelvingGuest2 = Shelving.create!(
-  bookshelf_id: bookshelf2.id, book_id: book2.id, read_status: "Want To Read"
+  bookshelf_id: bookshelf2.id, book_id: survivor.id, read_status: "Want To Read"
 )
 shelvingGuest3 = Shelving.create!(
-  bookshelf_id: bookshelf3.id, book_id: book3.id, read_status: "Currently Reading"
+  bookshelf_id: bookshelf3.id, book_id: dharmaBums.id, read_status: "Currently Reading"
 )
 shelvingGuest4 = Shelving.create!(
-  bookshelf_id: bookshelf1.id, book_id: book4.id, read_status: "Read"
+  bookshelf_id: bookshelf1.id, book_id: thePaleKing.id, read_status: "Read"
 )
 shelvingUser_1 = Shelving.create!(
-  bookshelf_id: bookshelf5.id, book_id: book1.id, read_status: "Read"
+  bookshelf_id: bookshelf5.id, book_id: slaughterhouseFive.id, read_status: "Read"
 )
 shelvingUser_2 = Shelving.create!(
-  bookshelf_id: bookshelf6.id, book_id: book2.id, read_status: "Want to Read"
+  bookshelf_id: bookshelf6.id, book_id: survivor.id, read_status: "Want to Read"
 )
 shelvingUser_3 = Shelving.create!(
-  bookshelf_id: bookshelf7.id, book_id: book3.id, read_status: "Read"
+  bookshelf_id: bookshelf7.id, book_id: dharmaBums.id, read_status: "Read"
 )
-shelvingUser2_1 = Shelving.create!(
-  bookshelf_id: bookshelf8.id, book_id: book1.id, read_status: "Read"
+shelvingthor_1 = Shelving.create!(
+  bookshelf_id: bookshelf8.id, book_id: slaughterhouseFive.id, read_status: "Read"
 )
-shelvingUser2_2 = Shelving.create!(
-  bookshelf_id: bookshelf9.id, book_id: book2.id, read_status: "Read"
+shelvingthor_2 = Shelving.create!(
+  bookshelf_id: bookshelf9.id, book_id: survivor.id, read_status: "Read"
 )
-shelvingUser3_1 = Shelving.create!(
-  bookshelf_id: bookshelf1.id, book_id: book3.id, read_status: "Currently Reading"
+shelvingsuttungr_1 = Shelving.create!(
+  bookshelf_id: bookshelf1.id, book_id: dharmaBums.id, read_status: "Currently Reading"
 )
-shelvingUser4_1 = Shelving.create!(bookshelf_id: bookshelf5.id, book_id: book5.id, read_status: "Read"
+shelvingloki_1 = Shelving.create!(bookshelf_id: bookshelf5.id, book_id: romeoAndJuliet.id, read_status: "Read"
 )
+
+review1 = Review.create!(user_id: guest.id, book_id: slaughterhouseFive.id, rating: 3, body: "An amazing work")
+
+review2 = Review.create!(user_id: guest.id, book_id: survivor.id, rating: 4, body: "Simply Extraordinary")
+
+review3 = Review.create!(user_id: guest.id, book_id: dharmaBums.id, rating: 5, body: "Legit, read it in a single day")
+
+review4 = Review.create!(user_id: thor.id, book_id: kublaiKhan.id, rating: 2, body: "What a great warrior!")
+
+review5 = Review.create!(user_id: suttungr.id, book_id: eatPrayLove.id, rating: 1, body: "Good food and drink is always inspiring")
+
+review6 = Review.create!(user_id: odin.id, book_id: romeoAndJuliet.id, rating: 1, body: "Both of these young lovers have a place in my hall")
+
+review7 = Review.create!(user_id: baldur.id, book_id: dharmaBums.id, rating: 4, body: "A beautiful story that inspires adventure and wonder")
+
+review8 = Review.create!(user_id: anansi.id, book_id: slaughterhouseFive.id, rating: 3, body: "Traveling through time never sounded so confusing")
+
+review9 = Review.create!(user_id: thor.id, book_id: iliad.id, rating: 4, body: "A great adventure!!!")

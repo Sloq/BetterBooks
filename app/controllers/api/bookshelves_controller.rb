@@ -7,6 +7,7 @@ class Api::BookshelvesController < ApplicationController
   def show
     user = User.find_by(id: params[:user_id])
     @shelf = user.bookshelves.find_by(shelf_name: params[:shelf_name]).shelvings
+    render "/api/bookshelves/show"
   end
 
   def create

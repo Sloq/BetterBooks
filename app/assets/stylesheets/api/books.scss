@@ -50,12 +50,18 @@
   padding: 30px;
   padding-top: 94px;
   display: flex;
+  flex-direction: column;
+}
+
+.book-show-component-top {
+  display: flex;
   justify-content: space-between;
 }
 
 .book-show-cover {
   border-radius: 4px;
-  width: 260px;
+  // width: 260px;
+  min-width: 260px;
   height: 400px;
   box-shadow: 3px 2px 5px grey;
 }

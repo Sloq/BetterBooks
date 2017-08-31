@@ -35,7 +35,6 @@ class ReadStatus extends React.Component {
   }
 
   updateShelfStatus(e) {
-    console.log(e.target)
     this.setState({shelf: e.target.value});
   }
 

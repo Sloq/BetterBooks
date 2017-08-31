@@ -6,6 +6,7 @@ import { requestShelvings, requestBookShelving, createShelving, deleteShelving, 
 import { shelvingsArray } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
+  state,
   viewingShelf: state.bookshelves.viewingShelf,
   shelvings: shelvingsArray(state.shelvings.shelvings)
 });
