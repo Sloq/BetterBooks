@@ -60,7 +60,7 @@ class ReadStatus extends React.Component {
       return (
         <form className="status-form"   >
           <select name="readStatus" onChange={this.updateStatus} defaultValue="selected">
-            <option value="selected" disabled>Choose Read Status</option>
+            <option value="selected" disabled>Read Status</option>
             <option value="Read" >Read</option>
             <option value="Currently Reading">Currently Reading</option>
             <option value="Want to Read">Want to Read</option>
