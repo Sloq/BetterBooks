@@ -25,8 +25,6 @@ class BookshelfSide extends React.Component {
 
   handleDelete(shelfName) {
     this.props.deleteBookshelf(shelfName, this.props.currentUser)
-    // if (this.props.match.params.shelf_name === shelfName) {
-    // }
   }
 
   shelvesUl() {

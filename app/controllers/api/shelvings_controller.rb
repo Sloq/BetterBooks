@@ -44,10 +44,6 @@ class Api::ShelvingsController < ApplicationController
     shelf_name = current_user.shelvings.find_by(id: params[:id]).bookshelf.shelf_name
     shelving = current_user.shelvings.find_by(id: params[:id])
     shelving.destroy!
-    p "============="
-    p current_user.id
-    p shelf_name
-    p "============="
     render json: {shelfName: shelf_name, userId: current_user.id}, status: 200
   end
 

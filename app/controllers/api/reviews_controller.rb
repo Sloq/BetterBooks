@@ -8,10 +8,6 @@ class Api::ReviewsController < ApplicationController
   # def update
   # end
 
-  # def show
-  #   @review = Review.find_by(id: params[:id])
-  # end
-
   def index
     current_book = Book.find_by(id: params[:book_id])
     @reviews = current_book.reviews

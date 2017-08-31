@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-// import ReviewForm from './review_form';
 import Rating from './star_rating';
 import RatingForm from './rating_form';
 
@@ -8,7 +7,6 @@ import RatingForm from './rating_form';
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
-    // this.reviewList = this.reviewList.bind(this);
   }
 
   componentDidMount() {

@@ -1,10 +1,8 @@
 import { connect } from 'react-redux';
-// import { booksArray } from '../../reducers/selectors';
 import Reviews from './reviews';
 import { requestBookReviews, createReview } from '../../actions/review_actions';
 
 const mapStateToProps = ({reviews, books, session}) => ({
-  // bookId: books.focus.id,
   bookId: books.focus.id,
   reviews: reviews.bookReviews,
   currentUser: session.currentUser
