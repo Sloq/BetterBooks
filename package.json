@@ -25,12 +25,12 @@
     "doc": "docs",
     "test": "test"
   },
-  "scripts": {
-    "postinstall": "webpack"
-  },
   "engines": {
     "node": "6.10.1",
     "npm": "3.10.10"
+  },
+  "scripts": {
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
