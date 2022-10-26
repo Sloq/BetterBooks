@@ -1,6 +1,6 @@
 # BetterBooks
 
-[BetterBooks live](http://www.findabetterbook.com/)
+The better books live site is no longer up but please read about this project below:
 
 BetterBooks is a web-app inspired by [Goodreads](https://www.goodreads.com/) that allows users to track which books they have read and organize them into bookshelves. It is a full-stack, single page web application that was built using Ruby on Rails a PostgreSQL database, and React/Redux.
 
